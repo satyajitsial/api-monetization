@@ -182,18 +182,18 @@ local function send_email(config,jwtToken,email_subject,email_content)
     auth_type = "plain",
     domain = "localhost.localdomain",
     host = "smtp.gmail.com",
-    password = "dgxbjsyxbaznhfdd",
+    password = "hghghghghghg",
     port = 587,
     ssl = false,
     starttls = true,
     timeout_connect = 60000,
     timeout_read = 60000,
     timeout_send = 60000,
-    username = "premagsckong@gmail.com"
+    username = "test@gmail.com"
   }}
-  local html_template={from = "premagsckong@gmail.com",
+  local html_template={from = "test@gmail.com",
   html = email_content,
-  reply_to = "premagsckong@gmail.com",
+  reply_to = "test@gmail.com",
   subject = email_subject,
   to = { config.email_address }}
 	local r, e = mail.send(self, html_template)
