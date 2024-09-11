@@ -37,27 +37,27 @@ kong restart
 ## Enable the plugin on a Consumer
 
 ### Admin-API
-For example, configure this plugin on a service by making the following request:
+For example, configure this plugin on a consumer by making the following request:
 		
   curl -i -X POST http://localhost:8001/consumers/<CONSUMER_ID>/plugins \
   --data "name=api-monetization" \
   --data "config.subscriptionPlan=Premium/Lite" \
   --data "config.subscriptionPackage=Monthly/Yearly" \
-  --data "config.email_address=user@example.com" \
+  --data "config.email_address=<Customer_Email>" \
   --data "config.Private_key=<PRIVATE_KEY>"
 
 ### Declarative(YAML)
-For example, configure this plugin on a service by adding this section to your declarative configuration file:
+For example, configure this plugin on a consumer by adding this section to your declarative configuration file:
 			
-	consumers:
+  - consumers:
   - username: <CONSUMER_NAME>
     plugins:
       - name: api-monetization
-        config:
-          subscriptionPlan: Premium/Lite
-          subscriptionPackage: Monthly/Yearly
-          email_address: user@example.com
-          Private_key: <PRIVATE_KEY>
+       config:
+        subscriptionPlan: Premium/Lite
+        subscriptionPackage: Monthly/Yearly
+        email_address: <Customer_Email>
+        Private_key: <PRIVATE_KEY>
 
 ## Parameters
 
