@@ -38,17 +38,17 @@ kong restart
 
 ### Admin-API
 For example, configure this plugin on a consumer by making the following request:
-		
+```		
   curl -i -X POST http://localhost:8001/consumers/<CONSUMER_ID>/plugins \
   --data "name=api-monetization" \
   --data "config.subscriptionPlan=Premium/Lite" \
   --data "config.subscriptionPackage=Monthly/Yearly" \
   --data "config.email_address=<Customer_Email>" \
   --data "config.Private_key=<PRIVATE_KEY>"
-
+```
 ### Declarative(YAML)
 For example, configure this plugin on a consumer by adding this section to your declarative configuration file:
-			
+```			
   - consumers:
   - username: <CONSUMER_NAME>
     plugins:
@@ -58,7 +58,7 @@ For example, configure this plugin on a consumer by adding this section to your 
         subscriptionPackage: Monthly/Yearly
         email_address: <Customer_Email>
         Private_key: <PRIVATE_KEY>
-
+```
 ## Parameters
 
 | FORM PARAMETER	     														| DESCRIPTION										  													|
